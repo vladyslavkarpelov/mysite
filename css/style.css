@@ -646,3 +646,31 @@ body.dark-theme .gallery-caption {
     height: 100%;
     border: none;
 }
+
+.video-section {
+    margin: 40px 0;
+}
+.video-section h3 {
+    margin-bottom: 15px;
+}
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.video-note {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.8;
+}
