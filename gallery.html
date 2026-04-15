@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <header>
-        <h1>Фотогалерея – моменти на шляху до економіки</h1>
+        <h1>Фотогалерея</h1>
         <nav>
             <ul>
                 <li><a href="index.html" class="home-link"><span class="material-icons">home</span> Головна</a></li>
@@ -24,23 +24,37 @@
 
     <main>
         <h2>Улюблені кадри, що надихають на вивчення економіки</h2>
-        <p><em>Наведіть мишку на фото – воно піднімається! Картинки накладаються одна на одну (ефект z-index).</em></p>
+        <p><em>Наведіть мишку на фото – воно плавно збільшується.</em></p>
 
-        <div class="gallery-container">
-            <img class="gallery-img img1" src="https://picsum.photos/id/26/300/250" alt="Біржа">
-            <img class="gallery-img img2" src="https://picsum.photos/id/24/300/250" alt="Графіки">
-            <img class="gallery-img img3" src="https://picsum.photos/id/29/300/250" alt="Монети">
-            <img class="gallery-img img4" src="https://picsum.photos/id/0/300/250" alt="Робоче місце">
+        <!-- Галерея сіткою 2x2 -->
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="img/photo1.jpg" alt="Економіка в дії">
+                <div class="gallery-caption">Фінансові ринки</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo2.jpg" alt="Аналітика">
+                <div class="gallery-caption">Аналіз даних</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo3.jpg" alt="Гроші та монети">
+                <div class="gallery-caption">Грошовий обіг</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/photo4.jpg" alt="Робочий процес">
+                <div class="gallery-caption">Сучасний офіс</div>
+            </div>
         </div>
 
         <p><span class="material-icons">insights</span> Кожне з цих зображень символізує різні грані економічної діяльності: фінансові ринки, аналітику, гроші та сучасний офіс. Саме в такому середовищі я бачу своє майбутнє.</p>
         
-        <section id="video">
-            <h3><span class="material-icons">smart_display</span> Надихаюче відео про роль економіста</h3>
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; margin-top:20px;">
-                <iframe style="position: absolute; top:0; left:0; width:100%; height:100%; border-radius:20px;" src="https://www.youtube.com/embed/LvNQy0NHB8U" title="Чому варто вивчати економіку" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
+<iframe width="100%" height="100%" 
+        src="https://www.youtube.com/embed/yoVc_S_gd_0?si=YK5hAlzS8CQpm7ZA&amp;rel=0" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+</iframe>
     </main>
 
     <footer>
