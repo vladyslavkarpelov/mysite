@@ -569,3 +569,80 @@ nav .material-icons {
     margin-right: 4px;
     margin-top: -2px;
 }
+
+/* Галерея сіткою 2×2 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(30, 58, 46, 0.85);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+/* Темна тема для галереї */
+body.dark-theme .gallery-caption {
+    background: rgba(15, 30, 12, 0.9);
+}
+
+/* Адаптивність: на вузьких екранах – 1 колонка */
+@media (max-width: 700px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Відео-секції */
+.video-section {
+    margin: 40px 0;
+}
+.video-section h3 {
+    margin-bottom: 15px;
+}
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
