@@ -1,15 +1,14 @@
-/* ========== ПІДКЛЮЧЕННЯ СУЧАСНОГО ШРИФТУ INTER ========== */
+/* ========== ПІДКЛЮЧЕННЯ ШРИФТІВ ========== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
-/* ========== ПІДКЛЮЧЕННЯ GOOGLE MATERIAL ICONS ========== */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+/* ========== ГЛОБАЛЬНІ СТИЛІ ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Плавний перехід для всіх змінних властивостей */
 body, body * {
     transition: background-color 0.3s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -33,31 +32,25 @@ body.dark-theme {
     background-image: linear-gradient(135deg, #0f1e0c 0%, #1a2a1f 100%);
     color: #e0e0e0;
 }
-
 body.dark-theme .container {
     background-color: rgba(30, 40, 25, 0.95);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
-
 body.dark-theme header {
     background: #0f1e0c;
 }
-
 body.dark-theme nav ul li a {
     background-color: #2c5e3a;
     color: #f0f0f0;
 }
-
 body.dark-theme nav ul li a:hover {
     background-color: #ffd966;
     color: #0f1e0c;
 }
-
 body.dark-theme .subtitle {
     background: #2c5e3a;
     color: #ffefc0;
 }
-
 body.dark-theme table {
     background-color: #2a3a25;
 }
@@ -72,7 +65,6 @@ body.dark-theme th {
 body.dark-theme caption {
     background: #1e3a2e;
 }
-
 body.dark-theme form {
     background: #2a3a25;
 }
@@ -88,9 +80,6 @@ body.dark-theme .clock {
     background: #0f1e0c;
     color: #ffd966;
 }
-body.dark-theme .gallery-container {
-    background: #2a3a25;
-}
 body.dark-theme .custom-list li::before {
     color: #ffd966;
 }
@@ -103,8 +92,14 @@ body.dark-theme .social-links a {
 body.dark-theme footer {
     background: #0f1e0c;
 }
+body.dark-theme .gallery-caption {
+    background: rgba(15, 30, 12, 0.9);
+}
+body.dark-theme .video-note {
+    color: #c0dbc0;
+}
 
-/* ===== КНОПКА ПЕРЕМИКАННЯ ТЕМИ (FIXED) ===== */
+/* ===== КНОПКА ПЕРЕМИКАННЯ ТЕМИ ===== */
 .theme-toggle {
     position: fixed;
     bottom: 25px;
@@ -124,13 +119,11 @@ body.dark-theme footer {
     border: none;
     font-size: 28px;
 }
-
 .theme-toggle:hover {
     transform: scale(1.08);
     background-color: #ffaa33;
     color: #1e3a2e;
 }
-
 body.dark-theme .theme-toggle {
     background-color: #ffaa33;
     color: #1e3a2e;
@@ -140,7 +133,7 @@ body.dark-theme .theme-toggle:hover {
     color: #0f1e0c;
 }
 
-/* Інші існуючі стилі (залишаються без змін, окрім доданих вище) */
+/* ========== ОСНОВНІ БЛОКИ ========== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -161,7 +154,6 @@ header {
     margin-left: -30px;
     margin-right: -30px;
 }
-
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -180,7 +172,6 @@ nav ul {
     margin-top: 15px;
     flex-wrap: wrap;
 }
-
 nav ul li a {
     text-decoration: none;
     font-weight: 600;
@@ -193,19 +184,16 @@ nav ul li a {
     display: inline-block;
     letter-spacing: 0.3px;
 }
-
 nav ul li a:hover {
     background-color: #ffd966;
     color: #1e3a2e;
     transform: scale(1.02);
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
-
 .home-link {
     background-color: #ffaa33 !important;
     color: #1e3a2e !important;
 }
-
 .home-link:hover {
     background-color: #ffcc66 !important;
 }
@@ -223,14 +211,12 @@ footer {
     margin-right: -30px;
     margin-bottom: -20px;
 }
-
 .social-links a {
     margin: 0 10px;
     color: #ffd966;
     text-decoration: none;
     font-weight: 500;
 }
-
 .social-links a:hover {
     text-decoration: underline;
 }
@@ -256,7 +242,7 @@ footer {
     text-align: justify;
 }
 
-/* Нестандартні маркери для UL – єдина іконка з Google Icons */
+/* ========== СПИСКИ ========== */
 ul.custom-list {
     list-style: none;
     margin-left: 20px;
@@ -269,14 +255,13 @@ ul.custom-list li {
 }
 ul.custom-list li::before {
     font-family: 'Material Icons';
-    content: 'trending_up';  /* можна замінити на 'analytics', 'insights', 'bar_chart' */
+    content: 'trending_up';
     position: absolute;
     left: 0;
     top: 2px;
     font-size: 1.3rem;
     color: #2c5e3a;
 }
-
 
 ol {
     list-style: none;
@@ -294,7 +279,6 @@ ol li::before {
     font-weight: 700;
     margin-right: 8px;
 }
-
 ol.roman-list {
     list-style-type: upper-roman;
     margin-left: 30px;
@@ -306,6 +290,7 @@ ol.roman-list li::before {
     content: none;
 }
 
+/* ========== ТАБЛИЦЯ ========== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -334,32 +319,7 @@ th {
     font-weight: 600;
 }
 
-.gallery-container {
-    position: relative;
-    height: 450px;
-    margin: 40px 0;
-    background: #e9f0e9;
-    border-radius: 20px;
-    overflow: hidden;
-}
-.gallery-img {
-    position: absolute;
-    width: 280px;
-    border: 5px solid white;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s, z-index 0s;
-    cursor: pointer;
-}
-.gallery-img:hover {
-    transform: scale(1.05);
-    z-index: 10 !important;
-}
-.img1 { top: 30px; left: 50px; z-index: 1; }
-.img2 { top: 80px; left: 180px; z-index: 2; }
-.img3 { top: 130px; left: 310px; z-index: 3; }
-.img4 { top: 180px; left: 440px; z-index: 4; }
-
+/* ========== ФОРМА ========== */
 form {
     background: #fef9e6;
     padding: 20px;
@@ -399,56 +359,27 @@ button:not(.theme-toggle):hover {
     transform: scale(1.02);
 }
 
+/* ========== ГОДИННИК ========== */
 .clock {
     background: #2c5e3a;
     color: #ffefc0;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
     padding: 15px;
     border-radius: 60px;
     margin: 20px 0;
     font-family: 'Inter', monospace;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-@media (max-width: 800px) {
-    .columns {
-        column-count: 1;
-    }
-    .gallery-img {
-        width: 200px;
-    }
-    .img1, .img2, .img3, .img4 {
-        position: relative;
-        display: inline-block;
-        margin: 10px;
-        top: auto;
-        left: auto;
-    }
-    .gallery-container {
-        height: auto;
-        text-align: center;
-    }
-}
-
-/* Центрований блок навігації по сторінці (about.html) */
+/* ========== НАВІГАЦІЯ ПО СТОРІНЦІ (about.html) ========== */
 .content-nav {
     text-align: center;
     background: #e0f0e0;
     padding: 12px 20px;
     border-radius: 50px;
-    margin: 20px 0;
-    font-weight: 500;
-    transition: background 0.3s, color 0.3s;
-}
-/* ===== ДЛЯ СТОРІНКИ about.html ===== */
-.content-nav {
-    text-align: center;
-    background: #e0f0e0;
-    padding: 12px 20px;
-    border-radius: 50px;
-    margin: 20px 0;
+    margin: 20px 0 2rem;
     font-weight: 500;
     transition: background 0.3s, color 0.3s;
 }
@@ -467,6 +398,13 @@ body.dark-theme .content-nav {
 body.dark-theme .content-nav a {
     color: #ffefc0;
 }
+
+/* ========== ВІДЖЕТ ПОГОДИ ========== */
+.weather-widget {
+    margin: 20px 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
 .weather-widget iframe {
     background: #2c5e3a;
     border-radius: 20px;
@@ -478,106 +416,13 @@ body.dark-theme .content-nav a {
     opacity: 0.8;
 }
 
-/* Для годинника та віджетів на about.html */
-.clock {
-    background: #2c5e3a;
-    color: #ffefc0;
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: center;
-    padding: 15px;
-    border-radius: 60px;
-    margin: 20px 0;
-    font-family: 'Inter', monospace;
-    letter-spacing: 2px;
-}
-.weather-widget {
-    margin: 20px 0;
-    border-radius: 20px;
-    overflow: hidden;
-}
-.weather-note {
-    font-size: 0.85rem;
-    text-align: center;
-    margin-top: 10px;
-    opacity: 0.8;
-}
-
-/* ===== ВІДСТУПИ ДЛЯ ЗАГОЛОВКІВ ТА СПИСКІВ ===== */
-h2, h3, h4 {
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
-}
-
-h2:first-of-type, h3:first-of-type {
-    margin-top: 0;
-}
-
-/* Додатковий відступ перед списками, якщо вони йдуть одразу після заголовка */
-ul, ol {
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-}
-
-/* Спеціально для секцій, щоб між секціями був більший проміжок */
-section {
-    margin-bottom: 2rem;
-}
-
-/* Для змісту сторінки (content-nav) додамо відступ знизу, щоб наступний заголовок не прилипав */
-.content-nav {
-    margin-bottom: 2rem;
-}
-
-/* ===== СТИЛІ ДЛЯ ІКОНОК GOOGLE MATERIAL ===== */
-.material-icons {
-    font-size: 1.2rem;
-    vertical-align: middle;
-    margin-right: 4px;
-    margin-top: -2px;
-}
-h1 .material-icons,
-h2 .material-icons,
-h3 .material-icons {
-    font-size: 1.4rem;
-    margin-right: 8px;
-}
-nav .material-icons {
-    font-size: 1.1rem;
-    margin-right: 4px;
-}
-
-/* Відступи для сторінки галереї */
-.gallery-container {
-    margin-bottom: 25px;
-}
-.gallery-container + p {
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-#video {
-    margin-top: 30px;
-}
-#video h3 {
-    margin-bottom: 20px;
-}
-
-/* Іконки в футері */
-.social-links a .material-icons {
-    font-size: 1.1rem;
-    vertical-align: middle;
-    margin-right: 4px;
-    margin-top: -2px;
-}
-
-/* Галерея сіткою 2×2 */
+/* ========== ГАЛЕРЕЯ СІТКОЮ 2×2 ========== */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin: 30px 0;
 }
-
 .gallery-item {
     position: relative;
     overflow: hidden;
@@ -585,7 +430,6 @@ nav .material-icons {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transition: transform 0.3s;
 }
-
 .gallery-item img {
     width: 100%;
     height: 250px;
@@ -593,11 +437,9 @@ nav .material-icons {
     display: block;
     transition: transform 0.3s ease;
 }
-
 .gallery-item:hover img {
     transform: scale(1.05);
 }
-
 .gallery-caption {
     position: absolute;
     bottom: 0;
@@ -610,13 +452,6 @@ nav .material-icons {
     font-weight: 500;
     backdrop-filter: blur(4px);
 }
-
-/* Темна тема для галереї */
-body.dark-theme .gallery-caption {
-    background: rgba(15, 30, 12, 0.9);
-}
-
-/* Адаптивність: на вузьких екранах – 1 колонка */
 @media (max-width: 700px) {
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -624,29 +459,7 @@ body.dark-theme .gallery-caption {
     }
 }
 
-/* Відео-секції */
-.video-section {
-    margin: 40px 0;
-}
-.video-section h3 {
-    margin-bottom: 15px;
-}
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    border-radius: 20px;
-    overflow: hidden;
-}
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
+/* ========== ВІДЕО-СЕКЦІЇ ========== */
 .video-section {
     margin: 40px 0;
 }
@@ -673,4 +486,49 @@ body.dark-theme .gallery-caption {
     font-size: 0.9rem;
     text-align: center;
     opacity: 0.8;
+}
+
+/* ========== ВІДСТУПИ ДЛЯ ЗАГОЛОВКІВ ========== */
+h2, h3, h4 {
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+}
+h2:first-of-type, h3:first-of-type {
+    margin-top: 0;
+}
+ul, ol {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+section {
+    margin-bottom: 2rem;
+}
+
+/* ========== СТИЛІ ДЛЯ ІКОНОК ========== */
+.material-icons {
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+h1 .material-icons, h2 .material-icons, h3 .material-icons {
+    font-size: 1.4rem;
+    margin-right: 8px;
+}
+nav .material-icons {
+    font-size: 1.1rem;
+    margin-right: 4px;
+}
+.social-links a .material-icons {
+    font-size: 1.1rem;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+
+/* ========== АДАПТИВНІСТЬ ========== */
+@media (max-width: 800px) {
+    .columns {
+        column-count: 1;
+    }
 }
