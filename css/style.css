@@ -62,7 +62,7 @@ body.dark-theme {
     --surface: rgba(10, 22, 38, 0.88);
     --surface-solid: #0f2238;
     --surface-soft: #122942;
-    --line: rgba(151, 186, 220, 0.14);
+    --line: rgba(80, 160, 255, 0.4);  
     --text: #dce8f6;
     --muted: #9eb3cb;
     --heading: #f7fbff;
@@ -76,6 +76,36 @@ body.dark-theme {
     --footer: #06101a;
     --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
     --shadow-soft: 0 16px 34px rgba(0, 0, 0, 0.22);
+}
+
+body.dark-theme .eyebrow {
+    color: #ffffff;
+    background: linear-gradient(135deg, #2a6ebb, #1f4f8a);  
+    box-shadow: 0 0 0 1px rgba(100, 180, 255, 0.5);       
+}
+
+body.dark-theme .section-kicker {
+    color: #c3ddff;
+    background: rgba(70, 140, 255, 0.2);
+    box-shadow: 0 0 0 1px rgba(100, 180, 255, 0.5);
+}
+
+body.dark-theme .stat-card,
+body.dark-theme .section-card,
+body.dark-theme .content-nav,
+body.dark-theme .gallery-item,
+body.dark-theme .video-wrapper,
+body.dark-theme .weather-widget,
+body.dark-theme .clock,
+body.dark-theme table,
+body.dark-theme form {
+    border: 1px solid rgba(80, 160, 255, 0.5);
+}
+
+body.dark-theme .stat-card:hover,
+body.dark-theme .section-card:hover,
+body.dark-theme .gallery-item:hover {
+    border-color: rgba(120, 190, 255, 0.8);
 }
 
 .container {
