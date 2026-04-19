@@ -25,7 +25,7 @@
     <main>
         <h2><span class="material-icons">rate_review</span> Ваша думка допоможе мені стати кращим!</h2>
         
-        <!-- form дійсна, дані підуть на FormSubmit -->
+        
         <form id="feedbackForm">
             <div class="form-group">
                 <label for="name"><span class="material-icons">person</span> Ваше ім'я:</label>
@@ -47,7 +47,7 @@
             </div>
             <button type="submit"><span class="material-icons">send</span> Надіслати відгук</button>
         </form>
-        <!-- контейнер для повідомлення -->
+        
         <div id="formStatus" style="margin-top: 15px; text-align: center;"></div>
     </main>
 
@@ -66,7 +66,7 @@
 </div>
 
 <script>
-    // Перемикання теми (залишаємо без змін)
+    
     (function() {
         const toggle = document.getElementById('themeToggle');
         const icon = document.getElementById('themeIcon');
@@ -87,25 +87,25 @@
         });
     })();
 
-    // Відправка форми на FormSubmit (без перезавантаження)
+    
     const form = document.getElementById('feedbackForm');
     const statusDiv = document.getElementById('formStatus');
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault();  // не перезавантажуємо сторінку
+        e.preventDefault();  
 
-        // збираємо дані
+        
         const formData = new FormData(form);
-        // додаємо приховані поля, необхідні для FormSubmit
+        
         formData.append('_subject', 'Новий відгук з сайту-візитки!');
-        formData.append('_captcha', 'true');   // вимикаємо капчу (можна увімкнути, якщо хочете)
-        formData.append('_template', 'table');   // гарний формат листа
+        formData.append('_captcha', 'true');   
+        formData.append('_template', 'table');   
 
         statusDiv.innerHTML = '<span class="material-icons" style="font-size:1.2rem; vertical-align:middle;">hourglass_top</span> Відправляємо...';
         statusDiv.style.color = '#2c5e3a';
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/karpelov.vladyslav@student.karazin.ua', {  // ЗАМІНІТЬ на свою реальну адресу
+            const response = await fetch('https://formsubmit.co/ajax/karpelov.vladyslav@student.karazin.ua', {  
                 method: 'POST',
                 body: formData
             });
@@ -113,7 +113,7 @@
             if (result.success === 'true' || response.ok) {
                 statusDiv.innerHTML = '<span class="material-icons" style="font-size:1.2rem; vertical-align:middle;">check_circle</span> Дякуємо! Ваш відгук надіслано.';
                 statusDiv.style.color = '#1e7e34';
-                form.reset();  // очищаємо форму
+                form.reset();  
                 setTimeout(() => { statusDiv.innerHTML = ''; }, 5000);
             } else {
                 throw new Error('Помилка сервера');
